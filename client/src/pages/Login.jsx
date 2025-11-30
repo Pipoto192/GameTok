@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import './Auth.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -16,7 +17,7 @@ const Login = () => {
 
   return (
     <div className="auth-container">
-      <h2>Login</h2>
+      <h2>Log in to GameTok</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -30,8 +31,11 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <button type="submit">Log In</button>
       </form>
+      <div className="auth-link">
+        Don't have an account? <Link to="/register">Sign up</Link>
+      </div>
     </div>
   );
 };

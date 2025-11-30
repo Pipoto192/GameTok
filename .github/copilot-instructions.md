@@ -32,15 +32,19 @@
     Handle game states (preview, playing, game over).
     -->
 
-- [ ] Implement Leaderboards
+- [x] Implement Leaderboards
     <!--
     Create Leaderboard component.
     Update backend to store scores.
     Display scores in GameCard or separate view.
     -->
 
-- [x] Install Required Extensions
-	<!-- ONLY install extensions provided mentioned in the get_project_setup_info. Skip this step otherwise and mark as completed. -->
+- [ ] Ensure Documentation is Complete
+	<!--
+	Verify that all previous steps have been completed.
+	Verify that README.md and the copilot-instructions.md file in the .github directory exists and contains current project information.
+	Clean up the copilot-instructions.md file in the .github directory by removing all HTML comments.
+	 -->
 
 - [x] Compile the Project
 	<!--

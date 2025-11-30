@@ -12,30 +12,39 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     // Check if user is logged in (e.g., check token in localStorage)
     const token = localStorage.getItem('token');
-    if (token) {
-      // Validate token with backend (mocked for now)
-      setUser({ username: 'User' }); // Replace with actual user data fetch
+    const storedUser = localStorage.getItem('user');
+    if (token && storedUser) {
+      setUser(JSON.parse(storedUser));
     }
     setLoading(false);
   }, []);
 
   const login = async (username, password) => {
-    // Implement login logic
-    // const res = await axios.post('http://localhost:3000/login', { username, password });
-    // localStorage.setItem('token', res.data.token);
-    // setUser(res.data.user);
-    console.log('Login', username, password);
-    setUser({ username });
-    localStorage.setItem('token', 'mock-token');
+    try {
+      const res = await axios.post('http://localhost:3000/login', { username, password });
+      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('user', JSON.stringify(res.data.user));
+      setUser(res.data.user);
+    } catch (error) {
+      console.error("Login failed", error);
+      alert("Login failed");
+    }
   };
 
   const register = async (username, password) => {
-    // Implement register logic
-    console.log('Register', username, password);
+    try {
+      const res = await axios.post('http://localhost:3000/register', { username, password });
+      // Auto login after register
+      await login(username, password);
+    } catch (error) {
+      console.error("Register failed", error);
+      alert("Register failed");
+    }
   };
 
   const logout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     setUser(null);
   };
 

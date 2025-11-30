@@ -112,3 +112,55 @@
   font-size: 18px;
   z-index: 20;
 }
+
+.leaderboard-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  z-index: 30;
+  text-align: center;
+}
+
+.leaderboard-overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.leaderboard-overlay li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #333;
+}
+
+.leaderboard-overlay button {
+  margin: 5px;
+  padding: 10px 20px;
+  background: #fe2c55;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tap-to-play {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.5; transform: scale(1); }
+}
