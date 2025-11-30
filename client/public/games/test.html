@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Game</title>
+    <style>
+        body { margin: 0; background: #333; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; }
+        canvas { background: #000; border: 2px solid #fff; }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Simple Game Placeholder</h1>
+        <p>Click to score!</p>
+        <button onclick="score()">Score +1</button>
+        <p>Score: <span id="score">0</span></p>
+    </div>
+    <script>
+        let s = 0;
+        function score() {
+            s++;
+            document.getElementById('score').innerText = s;
+            // Send score to parent window
+            window.parent.postMessage({ type: 'GAME_SCORE', score: s }, '*');
+        }
+    </script>
+</body>
+</html>

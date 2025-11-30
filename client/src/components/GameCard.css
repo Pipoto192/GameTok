@@ -1,0 +1,114 @@
+.game-card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.game-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-overlay {
+  position: absolute;
+  bottom: 60px; /* Above navbar */
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  pointer-events: none; /* Let clicks pass through to game if needed */
+}
+
+.game-info {
+  text-align: left;
+  color: white;
+  pointer-events: auto;
+}
+
+.game-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  pointer-events: auto;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.action-btn span:last-child {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.play-btn-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: rgba(254, 44, 85, 0.9);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.game-player-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: black;
+}
+
+.game-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.live-score {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 18px;
+  z-index: 20;
+}
